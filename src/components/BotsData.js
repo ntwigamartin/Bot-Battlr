@@ -5,6 +5,7 @@ import MyBotsArmy from "./MyBotsArmy";
 function BotsData() {
     
     const [bots, setBots] = useState([])
+    const [myBotsArmy, setMyBotsArmy] = useState([])
 
     useEffect(() => {
         fetch("https://ntwigamartin.github.io/Bot-Battlr-data/db.json")
@@ -12,19 +13,25 @@ function BotsData() {
         .then(data => {setBots(data.bots)})
     },[])
     
-    const botsEement = bots.map(bot => {
+    const botsElement = bots.map(bot => {
         return <BotsCollection 
         key={bot.id} 
-        bot={bot}/>
+        bot={bot}
+        AddMyBot={AddMyBot}/>
     })
     
+    function AddMyBot(item) {
+        setMyBotsArmy(item)
+    }
+
+    console.log(myBotsArmy);
     return (
         <div className="bots-containers">
             <div className='bots-collection'>
-            {botsEement}
+            {botsElement}
             </div>
-            <div>
-            <MyBotsArmy />
+            <div className="bots-collection">
+            <MyBotsArmy mybot={myBotsArmy}/>
             </div>
             
         </div>

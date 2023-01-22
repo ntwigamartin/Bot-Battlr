@@ -41,6 +41,7 @@ code {
   border-radius: 5px;
   margin: 20px;
   overflow-wrap: break-word;
+  height: fit-content;
 }
 
 .each-bot > span {
