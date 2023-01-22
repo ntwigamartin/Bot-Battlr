@@ -29,8 +29,15 @@ function BotsData() {
     const myBotElement = myBotsArmy.map((bot, index) => {
         return <MyBotsArmy 
         key={index}
-        mybot={bot} />
+        mybot={bot}
+        removeMyBot={removeMyBot} />
     })
+
+    function removeMyBot() {
+        // setMyBotsArmy(prevSt => {
+        //     return prevSt.filter(bot => bot.id!== this.props.mybot.id)
+        //})
+    }
 
     return (
         <div className="bots-containers">

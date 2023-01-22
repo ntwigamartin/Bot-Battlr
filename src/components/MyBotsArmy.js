@@ -1,9 +1,9 @@
 import React from 'react';
 
-function MyBotsArmy({mybot}){
+function MyBotsArmy({mybot, removeMyBot}){
     return (
         <div className='each-bot'>
-            <img src={mybot.avatar_url} alt="Avatar Loading..." />
+            <img src={mybot.avatar_url} alt="Avatar Loading..." onClick={()=> removeMyBot()}/>
             <h5>{mybot.name}</h5>
             <p>{mybot.catchphrase}</p>
             <span>
