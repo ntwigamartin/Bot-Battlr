@@ -1,8 +1,21 @@
 import React from 'react';
 
-function BotsCollection() {
+function BotsCollection({bot}) {
+    
+
+
     return (
-        <h1>bots collection</h1>
+        <div className='each-bot'>
+            <img src={bot.avatar_url} alt="Avatar Loading..."/>
+            <h5>{bot.name}</h5>
+            <p>{bot.catchphrase}</p>
+            <span>
+                <p>{bot.health}</p>
+                <p>{bot.damage}</p>
+                <p>{bot.armor}</p>
+            </span>
+            <button>X</button>
+        </div>
     )
 }
 
