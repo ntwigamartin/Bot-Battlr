@@ -21,17 +21,25 @@ function BotsData() {
     })
     
     function AddMyBot(item) {
-        setMyBotsArmy(item)
+        setMyBotsArmy(prevState =>{
+            return [...prevState, item]
+        })
     }
 
-    console.log(myBotsArmy);
+    const myBotElement = myBotsArmy.map((bot, index) => {
+        return <MyBotsArmy 
+        key={index}
+        mybot={bot} />
+    })
+
     return (
         <div className="bots-containers">
+            
             <div className='bots-collection'>
             {botsElement}
             </div>
             <div className="bots-collection">
-            <MyBotsArmy mybot={myBotsArmy}/>
+            {myBotElement}
             </div>
             
         </div>

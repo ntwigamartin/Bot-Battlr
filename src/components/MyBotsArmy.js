@@ -11,7 +11,6 @@ function MyBotsArmy({mybot}){
                 <p>{mybot.damage}</p>
                 <p>{mybot.armor}</p>
             </span>
-            <button>X</button>
         </div>
     )
 }

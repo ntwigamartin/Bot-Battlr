@@ -15,12 +15,15 @@ code {
 .navbar {
   background-color: #47441A;
   margin-top: -20px; 
-  padding-left: 20px; 
+  padding-left: 20px;
+  height: 50px;
+  border-radius: 5px; 
 }
 
 .bots-containers {
   display: flex;
   flex-direction: row;
+  margin-top: 0px;
 }
 
 .bots-collection {
@@ -29,14 +32,15 @@ code {
   width: 50%;
   border: 1px solid;
   border-radius: 5px;
-  margin: 20px;
+  margin-right: 5px;
+  margin-left: 5px;
   flex-wrap: wrap;
 }
 
 .each-bot {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 190px;
   border: 1px solid;
   border-radius: 5px;
   margin: 20px;
@@ -47,4 +51,21 @@ code {
 .each-bot > span {
   display: flex;
   flex-direction: row;
+}
+
+.each-bot > img {
+  background-color: beige;
+}
+
+.each-bot > button {
+  background-color: red;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 60px;
+  margin-right: 25%;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
