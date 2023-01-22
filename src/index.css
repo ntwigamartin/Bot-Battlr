@@ -53,12 +53,22 @@ code {
   flex-direction: row;
 }
 
+.each-bot > span > p {
+  padding-right: 10px;
+  
+}
+
 .each-bot > img {
   background-color: beige;
 }
 
 .each-bot > button {
   background-color: red;
+}
+
+.each-bot > h5, p {
+  padding: 10px;
+  font-size: xx-small;
 }
 
 .heading {

@@ -7,9 +7,9 @@ function MyBotsArmy({mybot, removeMyBot}){
             <h5>{mybot.name}</h5>
             <p>{mybot.catchphrase}</p>
             <span>
-                <p>{mybot.health}</p>
-                <p>{mybot.damage}</p>
-                <p>{mybot.armor}</p>
+                <p><i class="fa fa-heartbeat" aria-hidden="true"></i>{mybot.health}</p>
+                <p><i class="fa fa-bolt" aria-hidden="true"></i>{mybot.damage}</p>
+                <p><i class="fa fa-shield" aria-hidden="true"></i>{mybot.armor}</p>
             </span>
         </div>
     )
