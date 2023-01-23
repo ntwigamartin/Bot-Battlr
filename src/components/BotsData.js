@@ -21,9 +21,16 @@ function BotsData() {
     })
     
     function AddMyBot(item) {
-        setMyBotsArmy(prevState =>{
+        if (!myBotsArmy.includes(item)) {
+            setMyBotsArmy(prevState => {
             return [...prevState, item]
-        })
+            })
+            }
+        
+        
+        // setMyBotsArmy(prevState =>{
+        //     return [...prevState, item]
+        // })
     }
 
     const myBotElement = myBotsArmy.map((bot, index) => {
@@ -33,12 +40,14 @@ function BotsData() {
         removeMyBot={removeMyBot} />
     })
 
-    function removeMyBot() {
-        // setMyBotsArmy(prevSt => {
-        //     return prevSt.filter(bot => bot.id!== this.props.mybot.id)
-        //})
-    }
+    function removeMyBot(element) {
 
+        setMyBotsArmy(prevState => {
+            return prevState.filter(bot => bot !== element);
+        });
+        
+    }
+    console.log(myBotsArmy);
     return (
         <div className="bots-containers">
             
