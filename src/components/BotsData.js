@@ -2,35 +2,33 @@ import React, {useEffect, useState} from "react";
 import BotsCollection from "./BotsCollection";
 import MyBotsArmy from "./MyBotsArmy";
 
+//"https://ntwigamartin.github.io/Bot-Battlr-data/db.json"
+
 function BotsData() {
     
     const [bots, setBots] = useState([])
     const [myBotsArmy, setMyBotsArmy] = useState([])
 
     useEffect(() => {
-        fetch("https://ntwigamartin.github.io/Bot-Battlr-data/db.json")
+        fetch("http://localhost:3000/bots")
         .then(res => res.json())
-        .then(data => {setBots(data.bots)})
+        .then(data => {setBots(data)})
     },[])
     
     const botsElement = bots.map(bot => {
         return <BotsCollection 
         key={bot.id} 
         bot={bot}
-        AddMyBot={AddMyBot}/>
+        AddMyBot={AddMyBot}
+        deleteBot={deleteBot}/>
     })
     
     function AddMyBot(item) {
         if (!myBotsArmy.includes(item)) {
             setMyBotsArmy(prevState => {
             return [...prevState, item]
-            })
-            }
-        
-        
-        // setMyBotsArmy(prevState =>{
-        //     return [...prevState, item]
-        // })
+          })
+       }
     }
 
     const myBotElement = myBotsArmy.map((bot, index) => {
@@ -47,7 +45,25 @@ function BotsData() {
         });
         
     }
-    console.log(myBotsArmy);
+
+    function deleteBot(id) {
+        fetch(`http://localhost:3000/bots/${id}`, {
+            method: "DELETE",
+            headers: {
+        'Content-Type': 'application/json',
+        }
+         })
+        .then(res=>res.json())
+        .then(() =>{
+            const updatedBots = bots.filter(bot => bot.id !== id)
+            setBots(updatedBots)
+        })
+        console.log('clicked');
+    }
+
+
+
+
     return (
         <div className="bots-containers">
             

@@ -43,7 +43,7 @@ code {
   width: 190px;
   border: 1px solid;
   border-radius: 5px;
-  margin: 20px;
+  margin: 15px;
   overflow-wrap: break-word;
   height: fit-content;
 }
@@ -69,6 +69,7 @@ code {
 .each-bot > h5, p {
   padding: 10px;
   font-size: xx-small;
+  margin: 0px;
 }
 
 .heading {

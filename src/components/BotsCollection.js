@@ -1,10 +1,10 @@
 import React from 'react';
 
-function BotsCollection({bot, AddMyBot}) {
+function BotsCollection({bot, AddMyBot, deleteBot}) {
 
     return (
-        <div className='each-bot' onClick={()=> AddMyBot(bot)}>
-            <img src={bot.avatar_url} alt="Avatar Loading..."/>
+        <div className='each-bot'>
+            <img src={bot.avatar_url} alt="Avatar Loading..." onClick={()=> AddMyBot(bot)}/>
             <h5>{bot.name}</h5>
             <p>{bot.catchphrase}</p>
             <span>
@@ -12,7 +12,7 @@ function BotsCollection({bot, AddMyBot}) {
                 <p><i className="fa fa-bolt" aria-hidden="true"></i>{bot.damage}</p>
                 <p><i className="fa fa-shield" aria-hidden="true"></i>{bot.armor}</p>
             </span>
-            <button>X</button>
+            <button onClick={()=>deleteBot(bot.id)} >X</button>
         </div>
     )
 }
