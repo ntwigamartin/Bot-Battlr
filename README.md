@@ -27,9 +27,14 @@ Type the following commands on the terminal to run the app.
 
         npm install
 
-* Then run the following command to open the app on your browser;
+* Then run the following command to get the backend started;
+
+        json-server --watch db.json
+
+* Finally run the following command to open the app on your browser;
 
         npm start
+
 ## License
 ISC License <br>
 Copyright (c) 2023 Martin Ntwiga
