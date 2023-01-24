@@ -6,6 +6,9 @@ This is an app that allows the user to custom build an army of bots from a colle
 ## Using the Web App
 The app loads displaying a collection of bots. On clicking a bot image,the bot is enlisted into the my bots army section. The process can be repeated to enlist many bots however each bot can only be enlisted once. Clicking a bot in my bot army releases the bot from the my bots army listing. Clicking the red button on bots listed in the bots collection, permanently ends the bot service as its deleted from the backend.
 
+The app can be accessed online by opening this [link](https://bot-battlr-omega.vercel.app/) or locally by following the following instructions.<br>
+NB: Remember to replace the fetch url with this [url](http://localhost:3000/bots) when running the app locally.
+
 ## Requirements for running the application.
 * Text editor e,g Vs code
 * Browser e.g Chrome
