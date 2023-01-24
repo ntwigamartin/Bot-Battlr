@@ -1,7 +1,6 @@
 import React from 'react';
 
 function BotsCollection({bot, AddMyBot, deleteBot}) {
-
     return (
         <div className='each-bot'>
             <img src={bot.avatar_url} alt="Avatar Loading..." onClick={()=> AddMyBot(bot)}/>

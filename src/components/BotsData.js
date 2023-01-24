@@ -10,7 +10,7 @@ function BotsData() {
     const [myBotsArmy, setMyBotsArmy] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:3000/bots")
+        fetch("https://json-server-vercel-olive.vercel.app/bots")
         .then(res => res.json())
         .then(data => {setBots(data)})
     },[])
@@ -47,13 +47,10 @@ function BotsData() {
     }
 
     function deleteBot(id) {
-        fetch(`http://localhost:3000/bots/${id}`, {
+        fetch(`https://json-server-vercel-olive.vercel.app/bots/${id}`, {
             method: "DELETE",
-            headers: {
-        'Content-Type': 'application/json',
-        }
-         })
-        .then(res=>res.json())
+        })
+        //.then((res)=>res.json())
         .then(() =>{
             const updatedBots = bots.filter(bot => bot.id !== id)
             setBots(updatedBots)
